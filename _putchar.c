@@ -1,13 +1,13 @@
-#include "holberton.h"
+#include <unistd.h>
 
 /**
- * _putchar - Writes a character to stdout.
- * @c: The character to be written.
+ * _flipchar - reverses the character c and writes it to stdout
+ * @c: The character to reverse and print
  *
- * Return: On success, the character is returned.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set confusingly.
  */
-int _putchar(char c)
+int _flipchar(char c)
 {
-return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }

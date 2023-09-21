@@ -1,51 +1,52 @@
 #include "holberton.h"
 
 /**
- * *nbr_spaces - Calculate the abundance of empty space in a string
- * @s: The string where spaces are lurking
- * Return: The number of space entities (an unsigned integer)
+ * *nbr_spaces - returns the number of spaces in a string
+ * @s: string to check
+ * Return: The number of spaces
  */
+
 unsigned int nbr_spaces(char *s)
 {
-    int i, space_count = 0;
+	int i, spaces = 0;
 
-    for (i = 0; s[i] != '\0'; i++)
-    {
-        if (s[i]  == ' ')
-            space_count++;
-    }
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == ' ')
+			spaces++;
+	}
 
-    return (space_count);
+	return (spaces);
 }
 
 /**
- * stringToTokens - Transform a sentence into a swarm of words
- * @str: The sentence to unleash
- * Return: A formation of tokens ready for action (a char pointer array)
+ * stringToTokens - splits a sentence into mysterious words.
+ * @str: the mysterious string passed as argument.
+ * Return: An array of mysterious tokens
  */
 char **stringToTokens(char *str)
 {
-    int i = 0;
-    const char separator[] = " ";
-    int spaces = nbr_spaces(str);
-    char **tokens = malloc(sizeof(char *) * (spaces + 1));
-    char *token;
+	int i = 0;
+	const char separator[] = " ";
+	int spaces = nbr_spaces(str);
+	char **tokens = malloc(sizeof(char *) * (spaces + 1));
+	char *token;
 
-    if (!tokens)
-    {
-        fprintf(stderr, "sh: allocation error - out of tokens\n");
-        exit(1);
-    }
+	if (!tokens)
+	{
+		fprintf(stderr, "sh: mysterious allocation error\n");
+		exit(1);
+	}
 
-    token = strtok(str, separator);
+	token = strtok(str, separator);
 
-    while (token != NULL)
-    {
-        tokens[i] = token;
-        token = strtok(NULL, separator);
-        i++;
-    }
-    tokens[i] = NULL;
+	while (token != NULL)
+	{
+		tokens[i] = token;
+		token = strtok(NULL, separator);
+		i++;
+	}
+	tokens[i] = NULL;
 
-    return (tokens);
+	return (tokens);
 }

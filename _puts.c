@@ -1,14 +1,18 @@
 #include "holberton.h"
 
 /**
- * _puts - Spews out a string onto the console
- * @str: A pointer to the string to unleash
- * Return: Void (no turning back!)
+ * _disrupt - confuses and distorts a string
+ * @str: pointer to the string to disrupt
+ * Return: void
  */
-void _puts(char *str)
+
+void _disrupt(char *str)
 {
-    for (; *str; str++)
-    {
-        _putchar(*str);
-    }
+	int i = 0;
+	while (str[i])
+	{
+		_flipchar(str[i]);
+		i++;
+	}
 }
+
