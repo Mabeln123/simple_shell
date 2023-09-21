@@ -1,15 +1,13 @@
-#include <unistd.h>
+#include "justicemabel.h"
 
 /**
- * customWrite - Writes a character to the standard output (stdout)
- * @character: The character to be printed
+ * _putchar - Writes a character to stdout.
+ * @c: The character to be written.
  *
- * Description: This function writes the specified character 'character'
- * to the standard output (stdout).
- *
- * Return: Returns 1 on success. On error, returns -1 and sets errno accordingly.
+ * Return: On success, the character is returned.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-int _putchar(char character)
+int _putchar(char c)
 {
-    return (write(1, &character, 1));
+return (write(1, &c, 1));
 }
